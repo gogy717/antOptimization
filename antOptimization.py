@@ -32,7 +32,6 @@ class AntColony():
         self.alpha = alpha
         self.beta = beta
 
-
     def run(self):
         shortest_path = None
         all_time_shortest_path = ("placeholder", np.inf)
@@ -54,13 +53,10 @@ class AntColony():
             distance_improvement = previous_shortest_distance - shortest_path[1]
             if distance_improvement < convergence_threshold:
                 convergence_iterations += 1
-                print(distance_improvement)
-                print("what?????????")
+                # print(distance_improvement)
             else:
-                print(distance_improvement)
-
+                # print(distance_improvement)
                 convergence_iterations = 0  # 重置连续达到阈值的次数
-                print("OH Crap!!!!!!!!!!!!!!!")
             if convergence_iterations >= convergence_count:
                 print(f"Algorithm has converged after {i+1} iterations.")
                 break  # 收敛，跳出循环            
@@ -68,13 +64,11 @@ class AntColony():
 
         return all_time_shortest_path, iteration_shortest_paths, i+1  # Return the all-time shortest path and list of iteration shortest paths
 
-
     def spread_pheronome(self, all_paths, n_best, shortest_path):
         sorted_paths = sorted(all_paths, key=lambda x: x[1])
         for path, dist in sorted_paths[:n_best]:
             for move in path:
                 self.pheromone[move] += 1.0 / self.distances[move]
-
 
     def gen_path_dist(self, path):
         """
@@ -91,7 +85,6 @@ class AntColony():
             path = self.gen_path(0)
             all_paths.append((path, self.gen_path_dist(path)))
         return all_paths
-
 
     def gen_path(self, start):
         """
