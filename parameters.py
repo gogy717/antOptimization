@@ -28,4 +28,12 @@ for i in range(1,100,5):
     excecution_time.append(Time)
 
 plt.figure()  # 设置图像大小
-plt.bar(number_ants,excecution_time)  # 画�
+plt.bar(number_ants,excecution_time)  # 画柱状图，X轴是迭代次数，Y轴是距离值
+
+# 设置图表标题和轴标签
+plt.title(f'Iteration - number of ants')
+plt.xlabel('number of Ants')
+plt.ylabel('Excecution time')
+# 显示图表
+plt.show()
+
