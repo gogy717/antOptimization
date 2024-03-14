@@ -1,6 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from ant_optimization import AntColony
+from antOptimization import AntColony
 
 def generate_random_distance_matrix(size):
     # 生成一个随机的距离矩阵，矩阵大小为 size x size
