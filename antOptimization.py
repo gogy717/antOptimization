@@ -108,9 +108,7 @@ class AntColony():
         """
         pheromone = np.copy(pheromone)
         pheromone[list(visited)] = 0
-
         row = pheromone ** self.alpha * (( 1.0 / dist) ** self.beta)    # possibility
-
         norm_row = row / row.sum()
         move = np_choice(self.all_inds, 1, p=norm_row)[0]   # p is the possibility of each move
         return move
